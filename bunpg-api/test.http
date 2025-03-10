@@ -1,0 +1,16 @@
+
+POST http://localhost:3000/ticks
+Content-Type: application/json
+
+{
+    "venue": "LSE",
+    "symbol": "VOD.L",
+    "price": 100
+}
+
+###
+
+
+// new get request
+GET http://localhost:3000/ticks/LSE
+

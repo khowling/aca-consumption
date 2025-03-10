@@ -9,6 +9,20 @@ This readme is a step-by-step set of 'az' cli commands to deploy a API Managemen
 
 ## Deploy Infra
 
+If you have an account with subscription scope you can deploy the full example with one command, if (more likley) you have just resource group scope, you can deploy the individual bicep files into a single resource group.
+
+###  Subscription Scope
+```
+location="westeurope"
+uniqueName=$(printf '%05x' $RANDOM)
+deployname="${uniqueName}-acascale"
+
+az deployment sub create -n $deployname -l $location \
+  --template-file infra/main.bicep \
+  --parameters name=$deployname location=$location
+```
+
+
 ### Setup Environment
 
 UniqueEnv=kh02
